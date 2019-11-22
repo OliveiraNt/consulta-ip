@@ -6,4 +6,4 @@ app.get('/', (req, res) => {
   res.send(ip);
 });
 
-app.listen('8080', () => console.log('consulta-ip executando na porta 8080 \n\n'));
+app.listen(process.env.PORT || 8080, () => console.log('consulta-ip executando na porta 8080 \n\n'));
