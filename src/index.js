@@ -4,8 +4,10 @@ const app = express();
 app.get('/', (req, res) => {
   const header = req.header('x-forwarded-for');
   const remoteAddress = req.connection.remoteAddress;
+  const reqIp = req.ip;
   console.log(`header: ${header}`);
   console.log(`remoteAddress: ${remoteAddress}`);
+  console.log(`reqIp: ${reqIp}`);
   const ip = header || remoteAddress;
   console.log(`IP: ${ip}`);
   res.send({ip});
